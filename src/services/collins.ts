@@ -8,11 +8,18 @@ interface ServiceI {
 
 export class CollinsService implements ServiceI {
   url = 'https://www.collinsdictionary.com/dictionary'
-  language: string;
-  word: string;
+  language: string
+  word: string
 
-  constructor(language = 'english', word: string) {
+  constructor(language: string, word: string) {
     this.language = language
+
+    const decodeWord = decodeURIComponent(word.trim())
+
+    if (/\s/g.test(decodeWord)) {
+      throw new Error('You must pass just one word')
+    }
+
     this.word = word
   }
 
@@ -20,9 +27,9 @@ export class CollinsService implements ServiceI {
     return `${this.url}/${this.language}/${this.word}`
   }
 
-  public async getIpa() {
+  public async getIpa(): Promise<string> {
     const response = await axios.get(this.getUrl())
 
-    console.log(response.data)
+    return response.data
   }
 }
