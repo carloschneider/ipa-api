@@ -1,0 +1,23 @@
+name: Check Pull Request
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup node 17
+        uses: actions/setup-node@v1
+        with:
+          node-version: 17.x
+      - run: npm ci
+      - run: npm test
+      - run: npm build
+      - uses: akhileshns/heroku-deploy@v3.12.12
+        with:
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: "ipa-rest"
+          heroku_email: "uabc.carlo@gmail.com"
