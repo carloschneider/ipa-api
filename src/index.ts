@@ -4,7 +4,7 @@ import dotenv from 'dotenv'
 dotenv.config()
 
 import { CollinsService } from './services/collins'
-import { CollinsScraping } from './scraping/collins'
+import { CollinsScraping } from './scrapings/collins'
 
 const app = express()
 

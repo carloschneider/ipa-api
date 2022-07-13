@@ -1,6 +1,6 @@
 import { CollinsScraping } from '../collins'
 
-import { HTML } from '../__mocks__/'
+import { HTML } from '../__mocks__'
 
 describe('Scraping Collins', () => {
   let CollinsInstance: CollinsScraping
