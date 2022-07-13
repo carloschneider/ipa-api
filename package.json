@@ -11,7 +11,7 @@
     "dev": "nodemon --watch"
   },
   "engines": {
-    "node": "18.9.1"
+    "node": "17.x"
   },
   "keywords": [],
   "author": "",
