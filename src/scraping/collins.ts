@@ -1,13 +1,17 @@
-import { cheerio } from 'cheerio';
+import * as cheerio from 'cheerio'
 
 export class CollinsScraping {
-  private html: string
+  private $: cheerio.CheerioAPI
 
   constructor(html: string) {
-    this.html = html
+    this.$ = cheerio.load(html)
   }
 
-  public getIpa(): string {
-    return 'a'
+  public getPronunciation(): string {
+    return this
+      .$('span.pron.type-ipa')
+      .first()
+      .text()
+      .trim()
   }
 }
