@@ -16,8 +16,7 @@
   },
   "lint-staged": {
     "**/*.ts": [
-      "jest --bail --findRelatedTests",
-      "git add"
+      "jest --bail --findRelatedTests"
     ]
   },
   "keywords": [],
