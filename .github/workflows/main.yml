@@ -40,7 +40,5 @@ jobs:
         run: |
           echo "$PACKAGE_VERSION"
           npm version "${{ env.PACKAGE_VERSION }}" -m "[RELEASE] %s" --no-commit-hooks
-          git config --global user.name "GitHub CD bot"
-          git config --global user.email "github-cd-bot@users.noreply.github.com"
           git add -A
           git push --follow-tags
