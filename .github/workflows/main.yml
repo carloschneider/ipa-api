@@ -43,4 +43,4 @@ jobs:
           git config --global user.name "GitHub CD bot"
           git config --global user.email "github-cd-bot@example.com"
           git add .
-          git push "https://${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}" "main"
+          git push "https://${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}" "main" --follow-tags
