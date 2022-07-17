@@ -29,16 +29,16 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Deploy
-        uses: akhileshns/heroku-deploy@v3.12.12
-        with:
-          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-          heroku_app_name: "ipa-rest"
-          heroku_email: "uab.carlo@gmail.com"
-
       - name: Bump version
         run: |
           echo "$PACKAGE_VERSION"
           npm version "${{ env.PACKAGE_VERSION }}" -m "[RELEASE] %s" --no-commit-hooks
           git add -A
           git push --follow-tags
+
+      - name: Deploy
+        uses: akhileshns/heroku-deploy@v3.12.12
+        with:
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: "ipa-rest"
+          heroku_email: "uab.carlo@gmail.com"
