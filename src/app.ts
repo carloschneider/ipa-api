@@ -16,10 +16,10 @@ app.get('/:word', async (req, res) => {
   } = req
 
   try {
-    const Service = new CollinsService('english', word)
+    const Service: CollinsService = new CollinsService('english', word)
     const ipaHTML = await Service.getIpa()
 
-    const Scraping = new CollinsScraping(ipaHTML)
+    const Scraping: CollinsScraping = new CollinsScraping(ipaHTML)
 
     return res.json({
       pronunciation: Scraping.getPronunciation()
