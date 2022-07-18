@@ -22,7 +22,8 @@ app.get('/:word', async (req, res) => {
     const Scraping: CollinsScraping = new CollinsScraping(ipaHTML)
 
     return res.json({
-      pronunciation: Scraping.getPronunciation()
+      pronunciation: Scraping.getPronunciation(),
+      url: Service.getUrl()
     })
 
   } catch (error) {

@@ -23,7 +23,7 @@ export class CollinsService implements ServiceI {
     this.word = word
   }
 
-  private getUrl() {
+  public getUrl() {
     return `${this.url}/${this.language}/${this.word}`
   }
 

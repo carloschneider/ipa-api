@@ -17,7 +17,10 @@ describe('App', () => {
       .get('/world')
       .expect(200)
 
-    expect(response.body.pronunciation).toEqual('wɜːʳld')
+    expect(response.body).toEqual({
+      pronunciation: 'wɜːʳld',
+      url: 'https://www.collinsdictionary.com/dictionary/english/world'
+    })
   })
 
   it('should return error', async () => {
