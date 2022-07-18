@@ -17,7 +17,7 @@ describe('App', () => {
       .get('/world')
       .expect(200)
 
-    expect(response.body.pronunciation).toEqual('wɜrld')
+    expect(response.body.pronunciation).toEqual('wɜːʳld')
   })
 
   it('should return error', async () => {

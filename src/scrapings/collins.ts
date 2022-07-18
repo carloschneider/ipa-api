@@ -9,7 +9,7 @@ export class CollinsScraping {
 
   public getPronunciation(): string {
     return this
-      .$('span.pron.type-ipa')
+      .$('span.pron')
       .first()
       .text()
       .trim()

@@ -10,6 +10,6 @@ describe('Scraping Collins', () => {
   })
 
   it('should return true', () => {
-    expect(CollinsInstance.getPronunciation()).toBe('wɜrld')
+    expect(CollinsInstance.getPronunciation()).toBe('wɜːʳld')
   })
 })
