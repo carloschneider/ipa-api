@@ -1,3 +1,5 @@
+![GitHub](https://img.shields.io/github/license/carloschneider/ipa-api)
+
 # ipa-api
 
 ## About
